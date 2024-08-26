@@ -25,4 +25,3 @@ double findMedianSortedArrays(int* nums1, int nums1size, int* nums2, int nums2si
     }
 }
 
-
