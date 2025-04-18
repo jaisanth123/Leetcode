@@ -1,13 +1,14 @@
 class Solution {
     public int hammingWeight(int n) {
 
-        int count = 0 ; 
-        int temp = n ;
-        while (temp !=0 ){
-            count += temp & 1 ; 
-            temp >>>=1;
+    int c =0 ;
+    while (n !=0 ) {
+        if((n&1)==1) {
+            c++;
         }
-        int c = Integer.bitCount(n);
-        return c;
+       n= n>>1;
+    }      
+    return c;
+        
     }
 }
