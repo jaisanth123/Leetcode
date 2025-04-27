@@ -1,10 +1,13 @@
 class Solution {
     public String triangleType(int[] nums) {
-        int a = nums[0] , b = nums[1],c=nums[2];
-        if(a+b > c && a+c > b && b+c > a){
-            if(a==b && b==c) return "equilateral";
-            else if(a==b || b==c || c==a ) return "isosceles";
-            else return "scalene";
+        if(nums[0]+nums[1] > nums[2] && nums[0]+nums[2] > nums[1] && nums[2]+nums[1] > nums[0]){
+            if(nums[0]==nums[1]&& nums[1]==nums[2])
+                return "equilateral";
+            if(nums[0]!=nums[1] && nums[0]!=nums[2] &&nums[1]!=nums[2])
+                return "scalene";
+        
+             return "isosceles";
+
         }
         return "none";
         
