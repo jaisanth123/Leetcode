@@ -1,5 +1,5 @@
 class Solution {
-    public int kItemsWithMaximumSum(int x, int y, int z, int k) {
-    return (k<=x)?k:k<(x+y)?x:x-(k-x-y);
-    
-    }}
+    public int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k) {
+        return (k<=numOnes)?k:(k<=numOnes+numZeros)?numOnes:numOnes-(k-(numOnes+numZeros));
+    }
+}
