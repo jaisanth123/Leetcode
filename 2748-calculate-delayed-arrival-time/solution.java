@@ -1,7 +1,7 @@
 class Solution {
-    public int findDelayedArrivalTime(int x, int y) {
+    public int findDelayedArrivalTime(int at, int dt) {
 
-    return (x+y) % 24;       
+        return (at+dt) %24;
         
     }
 }
