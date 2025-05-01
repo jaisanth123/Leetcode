@@ -1,15 +1,11 @@
 class Solution {
     public int findNumbers(int[] nums) {
         int c = 0;
-        for(int i : nums){
-            int count=0;
-            while (i>0){
-                count++;
-                i/=10;
-            }
-            if(count%2==0)
+        for (int i : nums) {
+            if ((i > 9 && i <= 99) || (i > 999 && i <= 9999) || (i == 100000))
                 c++;
         }
         return c;
+
     }
 }
