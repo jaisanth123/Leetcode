@@ -1,16 +1,17 @@
 class Solution {
     public int distanceTraveled(int mt, int at) {
-        int ans = 0 ;
-        for(int i = 1 ; i<=mt;i++){
-            if (at!=0 && i%5==0){
-                at-=1;
-                mt+=1;}
-                ans+=10;
-        }
-
-    return ans;
-
-    // return (mt+ min(mt-1/4,at))*10;
-
+        if(mt<5)
+            return mt*10;
+       int total =0;
+       while(mt>=5) {
+        total+=5;
+        if(at!=0){
+            mt-=4;
+            at--;}
+        else
+        mt-=5;
+       }
+       total+=mt;
+       return total*10;
     }
 }
