@@ -1,6 +1,15 @@
 class Solution {
     public int passThePillow(int n, int time) {
-            int pos = time % (2*(n-1));
-            return pos < n ? pos+1 : ((n*2)-pos)-1;
+        if(n>time)
+            return time+1;
+        
+        boolean start = true ;
+        while (time >=n){
+            time -=n-1;
+            start = !start;
+
+        }
+        if(start) return time+1;
+        return n-time;
     }
 }
