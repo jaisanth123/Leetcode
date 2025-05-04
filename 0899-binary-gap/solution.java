@@ -1,18 +1,18 @@
 class Solution {
     public int binaryGap(int n) {
-    int max = 0;
-            int pos = 0;
-            int lastPos = -1;
-            while (n != 0) {
-                pos++;
-                if ((n & 1) == 1) {
-                    if (lastPos != -1) {
-                        max = Math.max(max, pos-lastPos);
-                    }
-                    lastPos = pos;
-                }
-                n >>= 1;
+        int max = 0;
+        int pos = 0 ;
+        int leftmax = -1;
+        while(n !=0){
+            pos++;
+            if((n&1) == 1){
+                if(leftmax!=-1)
+                    max = Math.max(max , pos-leftmax);
+                leftmax = pos;
             }
-            return max;
+            n >>=1;
+
+        }
+        return max;
     }
 }
