@@ -16,14 +16,14 @@ class Solution {
         while (left <= right){
             int mid = (left+right) /2;
             if(possible(bloomDay,mid,m,k)){
-                ans = mid ;
+            
                 right = mid-1;
             }
             else{
                 left=mid+1;
             }
         }
-        return ans;
+        return left;
     }
 
     //     for(int i = left ; i <=right ; i++){
