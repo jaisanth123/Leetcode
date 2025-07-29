@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/create-target-array-in-the-given-order">Create Target Array in the Given Order</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given two arrays of integers&nbsp;<code>nums</code> and <code>index</code>. Your task is to create <em>target</em> array under the following rules:</p>
+<p>Given two arrays of integers&nbsp;<code>nums</code> and <code>index</code>. Your task is to create <em>target</em> array under the following rules:</p>
 
 <ul>
 	<li>Initially <em>target</em> array is empty.</li>
