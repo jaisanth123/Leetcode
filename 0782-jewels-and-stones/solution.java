@@ -1,23 +1,18 @@
 class Solution {
     public int numJewelsInStones(String jewels, String stones) {
-        HashMap <Character,Integer>hm=new HashMap<>();
-        for(int c =0 ; c <jewels.length();c++){
-            char i = jewels.charAt(c);
-            if (hm.containsKey(i)){
-                hm.put(i,hm.get(i)+1);
-            }
-            else{
-                hm.put(i,1);
-            }
+
+        int [] arr = new int [58];
+        for(int i : stones.toCharArray()){
+            arr[i-'A'] +=1;   
         }
-        int c=0;
-        for(int j=0;j<stones.length();j++){
-            char t= stones.charAt(j);
-            if(hm.containsKey(t)){
-                c++;
-            }
+        int j = 0 ;
+        for(int i : jewels.toCharArray()){
+            j+=arr[i-'A'];
+
         }
-        return c;
+
+        return j;
+
         
     }
 }
