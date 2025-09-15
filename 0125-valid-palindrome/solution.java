@@ -1,28 +1,21 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        StringBuilder str = new StringBuilder ();
-        boolean num = false;
-        for(char ch : s.toCharArray()){
-            if((ch<='z' && ch>='a') || (ch<='9' && ch >= '0') ){
-                str.append(ch);
-            }
-            else if(ch<='Z' && ch>='A'){
-                str.append((char)(ch+32));
+        StringBuilder str= new StringBuilder();
+        for(char c :s.toCharArray()){
+            // if((c>='a' && c<='z') || (c>='A' && c <='Z')){
+            if(Character.isLetterOrDigit(c))   {
+                str.append(Character.toLowerCase(c));
             }
         }
-        String st = str.toString();
-        System.out.println(st);
-        int n = st.length();
         int l = 0;
-        int r = n-1;
+        int r = str.length()-1;
         while(l<r){
-            System.out.println(st.charAt(l));
-            if(st.charAt(l)!=st.charAt(r))
+            if(str.charAt(l)!=str.charAt(r))
                 return false;
             l++;
             r--;
         }
-
+        
         return true;
     }
 }
