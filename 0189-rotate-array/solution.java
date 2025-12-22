@@ -1,11 +1,24 @@
 class Solution {
-    public void rotate(int[] nums, int k) { 
+    public void rotate(int[] nums, int k) {
         int n = nums.length;
-        int  []res = new int [n];
-        System.arraycopy(nums,0,res,0,n);
-        for(int i = 0 ; i < n ; i++){
-                 nums[(i+k)%n]   =res[i];
+        k=k%n;
+        int r = n-k-1;
+        if(n==1)
+            return ;
+        reverse(nums,0,r);
+        reverse(nums,r+1,n-1);
+        reverse(nums,0,n-1);
+    }
+
+    private void reverse(int[] nums , int l , int r)
+    {
+        while(l<r)
+        {
+            int temp = nums[l];
+            nums[l] = nums[r];
+            nums[r] = temp;
+            l++;
+            r--;
         }
-        
     }
 }
