@@ -1,16 +1,20 @@
 class Solution {
+   
     public int majorityElement(int[] nums) {
-            int count = 0;
-            int candidate = nums[0];
-            for(int i =1 ; i<nums.length ; i++){
-                int x = nums[i];
-                if(count == 0 && x!= candidate)
-                    candidate =x;
-                else if(x == candidate)
-                    count++;
-                else 
-                    count--;
-            }    
-            return candidate;
+        return helper(nums,0,nums[0],nums.length);
+    }
+    private int helper(int [] nums , int si , int ref,int n)
+    {   
+        int c =0;
+        for(int i = si ; i < n;i++ )
+        {
+            if(nums[i]==ref)
+                c++;
+            else 
+                c--;
+            if(c==-1)
+                return helper(nums,i,nums[i],n);
+        }
+        return ref;
     }
 }
