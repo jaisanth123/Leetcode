@@ -21,6 +21,8 @@ class Solution {
         return flag;
     }
     void helper (TreeNode p , TreeNode q){
+        if(!flag)
+            return ;
         if(p==null || q==null)
         {
             if((p==null && q!=null) ||(q==null && p!=null)){
